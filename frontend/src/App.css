@@ -1,0 +1,7 @@
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0f1419;
+  overflow: hidden;
+}

@@ -1,0 +1,179 @@
+.base-node {
+  background: rgba(17, 25, 40, 0.85);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 0;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow: visible;
+}
+
+.base-node:hover {
+  border-color: var(--node-color, #5C7DFF);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.9), 0 0 20px rgba(92, 125, 255, 0.2);
+}
+
+.base-node-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px 16px 0 0;
+}
+
+.header-icon-container {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 18px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.header-text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.base-node-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.base-node-id {
+  font-size: 10px;
+  color: #8a8aa3;
+  font-family: monospace;
+  margin-top: 1px;
+}
+
+.base-node-content {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.base-node-content label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11px;
+  color: #a0a0b8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.base-node-content input,
+.base-node-content select,
+.base-node-content textarea {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: #e0e0e0;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.base-node-content input:focus,
+.base-node-content select:focus,
+.base-node-content textarea:focus {
+  outline: none;
+  border-color: var(--node-color, #5C7DFF);
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 3px rgba(92, 125, 255, 0.1);
+}
+
+/* Custom Handles */
+.custom-handle {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  transition: all 0.2s ease !important;
+  z-index: 10;
+}
+
+.custom-handle:hover {
+  width: 14px !important;
+  height: 14px !important;
+  margin-left: -2px !important;
+  margin-top: -2px !important;
+  box-shadow: 0 0 10px var(--node-color);
+}
+
+.handle-label {
+  position: absolute;
+  font-size: 10px;
+  color: #fff;
+  pointer-events: none;
+  font-weight: 600;
+  background: var(--node-color);
+  padding: 2px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(-50%) scale(0.8);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.custom-handle:hover .handle-label {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+.handle-label-left {
+  right: 18px;
+  top: 50%;
+}
+
+.handle-label-right {
+  left: 18px;
+  top: 50%;
+}
+
+/* Text Node Specific Styles */
+.text-node-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.text-node-textarea {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 8px !important;
+  padding: 12px 14px !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  resize: none !important;
+  overflow: hidden !important;
+  min-height: 40px !important;
+  font-family: inherit !important;
+}
+
+.text-node-textarea:focus {
+  border-color: var(--node-color) !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 0 0 3px rgba(92, 125, 255, 0.1) !important;
+}

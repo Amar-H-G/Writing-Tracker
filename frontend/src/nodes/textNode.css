@@ -1,0 +1,17 @@
+.text-node textarea {
+  line-height: 1.5;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+  width: 100%;
+  box-sizing: border-box;
+  transition: height 0.1s ease, width 0.1s ease;
+}
+
+.variables-info {
+  margin-top: 8px;
+  padding: 6px 8px;
+  background: rgba(92, 125, 255, 0.1);
+  border-radius: 6px;
+  border-left: 3px solid #5c7dff;
+}
